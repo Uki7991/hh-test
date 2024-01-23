@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/payment/{payment}/complete', [\App\Http\Controllers\v1\PaymentController::class, 'complete']);
+Route::get('/payment/{payment}/reject', [\App\Http\Controllers\v1\PaymentController::class, 'reject']);
